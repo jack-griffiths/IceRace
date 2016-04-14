@@ -78,7 +78,7 @@ public class GameController {
 		
 		
 		playerList[openArray] = player; //adds player to array
-		//test
+		//test 2
 		
 		List<World> worlds = Bukkit.getWorlds(); //gets the world list
 		World w = worlds.get(0); //gets the world 
