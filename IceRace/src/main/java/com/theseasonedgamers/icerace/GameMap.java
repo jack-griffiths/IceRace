@@ -22,7 +22,7 @@ public class GameMap {
 		List<World> worlds = Bukkit.getWorlds();
 		Block b = worlds.get(0).getBlockAt(1,1,1); //testing blocks, should grab the block and set it to air
 		b.setTypeId(0);
-				 
+		IceRace.getGc().resetBarriers();		 
 		
 		
 		

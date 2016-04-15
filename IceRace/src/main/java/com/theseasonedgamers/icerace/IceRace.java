@@ -1,10 +1,7 @@
  package com.theseasonedgamers.icerace;
  
     import org.bukkit.ChatColor;
-    import org.bukkit.metadata.FixedMetadataValue;
     import org.bukkit.plugin.java.JavaPlugin;
-
-import java.util.Arrays;
 
 import org.bukkit.Bukkit;
     import org.bukkit.command.Command;
@@ -12,7 +9,7 @@ import org.bukkit.Bukkit;
     import org.bukkit.entity.Player;
  
     public class IceRace extends JavaPlugin {
-    	private GameController gc = new GameController();
+    	private static GameController gc = new GameController();
  
     @Override
     public void onEnable() {
@@ -23,6 +20,10 @@ import org.bukkit.Bukkit;
     @Override
     public void onDisable() {
  
+    }
+    
+    public static GameController getGc() {
+    	return gc;
     }
  
 

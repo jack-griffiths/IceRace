@@ -38,7 +38,18 @@ public class GameController {
 	}
 	
 	public void dropBarriers() { //drops the barriers on the map to allow the players to go
+		List<World> worlds = Bukkit.getWorlds(); //gets the world list
+		World w = worlds.get(0); //gets the world 
+		Location location = new Location(w, -188, 76, 247); //sets the location (change accordingly)
+		location.getBlock().setTypeId(0); //sets the barrier to 0 (air)	
 		
+	}
+	
+	public void resetBarriers() {
+		List<World> worlds = Bukkit.getWorlds(); //gets the world list
+		World w = worlds.get(0); //gets the world 
+		Location location = new Location(w, -188, 76, 247); //sets the location (change accordingly)
+		location.getBlock().setTypeId(1);// remakes the block
 	}
 	
 	public void countdown() { //fix 
