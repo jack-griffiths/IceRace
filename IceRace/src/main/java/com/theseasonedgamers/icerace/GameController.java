@@ -19,7 +19,7 @@ public class GameController {
 	
 	public GameController() {
 		numPlayers = 0;
-		playerList = new Player[numPlayers]; //makes the array with number of players
+		
 	}
 	
 	public void newGame(int players) {
@@ -41,7 +41,7 @@ public class GameController {
 		
 	}
 	
-	public void countdown() {
+	public void countdown() { //fix 
         final Timer timer = new Timer();
         timer.scheduleAtFixedRate(new TimerTask() {
             int i = 10;
@@ -62,6 +62,7 @@ public class GameController {
 	}
 	
 	public void playerJoinGame(CommandSender sender) {
+		playerList = new Player[numPlayers]; //makes the array with number of players
 		Player player = (Player) sender;//converts sender to player
 		
 		int openArray = 0;
@@ -77,11 +78,11 @@ public class GameController {
 		Bukkit.getServer().broadcastMessage(ChatColor.AQUA +"" + sender + " has been added to the game! " + playersLeft() + " slots left!");
 		
 		
-		playerList[openArray] = player; //adds player to array
+		playerList[openArray] = player; //adds player to array //error here
 		
 		List<World> worlds = Bukkit.getWorlds(); //gets the world list
 		World w = worlds.get(0); //gets the world 
-		Location location = new Location(w, 2, 2, 2); //sets the location (change accordingly)
+		Location location = new Location(w, -188, 76, 247); //sets the location (change accordingly)
 		player.teleport(location); //Teleport the player to the start or lobby
 		
 		

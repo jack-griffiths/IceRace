@@ -53,6 +53,7 @@ import org.bukkit.Bukkit;
             			return false;
             		} else {
             			sender.sendMessage(ChatColor.DARK_GREEN +"Ending the game...");
+            			gc.setRunning(false);
             		}    
             			return true;
                     
@@ -73,7 +74,7 @@ import org.bukkit.Bukkit;
             		sender.sendMessage(ChatColor.DARK_RED +"A game is not currently running!");
             	}
             } else if (cmd.getName().equalsIgnoreCase("joinGame")) {
-            	if (gc.isRunning() == true && gc.getPlayersIn() < gc.getPlayerSlots() && !Arrays.asList(gc.getPlayerList()).contains(sender)) {	
+            	if (gc.isRunning() == true && gc.getPlayersIn() < gc.getPlayerSlots()){	
             		gc.playerJoinGame(sender); // adds the player to the game
             		return true;		
             	} else {
